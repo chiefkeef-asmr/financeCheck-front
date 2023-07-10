@@ -149,3 +149,8 @@ a:hover {
 .save-data {
   margin-left: 8px;
 }
+.wrapper-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
