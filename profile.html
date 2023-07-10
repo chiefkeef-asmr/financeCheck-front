@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile</title>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="grid-container">
+        <div class="leftCol">
+          <div class="accImage">
+            <img src="./assets/floyd-copy.webp" id="" class="acc-img" />
+          </div>
+
+          <div class="acc-menu"><h4>Аккаунт</h4></div>
+          <div class="acc-logout">
+            <a href="index.html" class="logout-btn">Выйти</a>
+          </div>
+        </div>
+        <div class="rightCol">
+          <div class="accInfo">
+            <div class="login-container">
+              <h4>Логин</h4>
+              <input type="text" value=" " readonly class="loginInfo" />
+            </div>
+
+            <div class="mail-container">
+              <h4>Электронная почта</h4>
+              <input type="mail" value=" " readonly />
+            </div>
+            <div class="acc-date">
+              <h4>Дата регистрации</h4>
+              <input type="date" value="Date: " readonly />
+            </div>
+            <div class="save-data">
+              <button type="submit">Сохранить изменения</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
