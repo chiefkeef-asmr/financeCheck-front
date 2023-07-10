@@ -33,6 +33,7 @@ button {
   height: 30px;
   font-weight: 600;
   box-shadow: 0 6px 5px 1px rgba(0, 0, 0, 0.131);
+  border-radius: 8px;
 }
 
 button:hover {
@@ -147,7 +148,8 @@ a:hover {
   font-weight: bold;
 }
 .save-data {
-  margin-left: 8px;
+  margin-top: 15px;
+  margin-left: 40px;
 }
 .wrapper-container {
   display: flex;
