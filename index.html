@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="./post.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -14,23 +15,32 @@
         <input type="text" id="login" placeholder="Логин" />
         <h3>Пароль</h3>
         <input type="password" id="password" placeholder="Пароль" />
-        <button onclick="validate()" class="sing-btn">Войти</button>
+        <button onclick="" class="sing-btn">Войти</button>
         <button onclick="showBlock()" class="reg-btn">Зарегистрировать</button>
       </div>
     </div>
     <div class="wrapper-reg">
       <div class="visible" id="visible">
-        <div class="regform">
+        <form class="regform" id="myForm">
           <h2>Регистрация</h2>
           <h3>Логин</h3>
           <input type="text" id="login-reg" />
           <h3>Пароль</h3>
           <input type="password" id="password-reg" />
-          <button onclick="register()" class="singup-btn">Зарегаться</button>
-          <button onclick="" id="showPassBtn">Показать пароль</button>
-        </div>
+          <h3>E-mail</h3>
+          <input type="mail" id="mail-reg" />
+          <button
+            type="submit"
+            class="singup-btn"
+            value="Зарегистрировать"
+            onclick=""
+          >
+            Зарегистрировать
+          </button>
+        </form>
       </div>
     </div>
+    <script src="./post.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>

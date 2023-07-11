@@ -28,18 +28,14 @@ function showBlock() {
   const myBlock = document.getElementById("visible");
   myBlock.style.display = "block";
 }
-function succRegBlock() {
-  const myBlock = document.getElementById("visible");
-  myBlock.style.display = "none";
-}
 
-const showPasswordButton = document.getElementById("showPassBtn");
+//const showPasswordButton = document.getElementById("showPassBtn");
 
-const maskedPassword = document.getElementById("password-reg");
+//const maskedPassword = document.getElementById("password-reg");
 
-showPasswordButton.addEventListener("click", function () {
-  if (maskedPassword.type === "password") {
-    maskedPassword.type = "text";
-  } else maskedPassword.type === "text";
-  maskedPassword.type = "password";
-});
+//showPasswordButton.addEventListener("click", function () {
+// if (maskedPassword.type === "password") {
+// maskedPassword.type = "text";
+// } else maskedPassword.type === "text";
+//maskedPassword.type = "password";
+//});
