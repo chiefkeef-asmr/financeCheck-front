@@ -38,6 +38,8 @@ button {
 
 button:hover {
   background-color: rgba(48, 62, 103, 0.83);
+  transition: all 0, 3s;
+  z-index: -1;
 }
 .regform {
   background-color: rgb(39, 39, 39);

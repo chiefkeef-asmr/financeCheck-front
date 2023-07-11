@@ -16,7 +16,10 @@ function validate() {
 
   if (!signInLogin || !signInPassword) return alert("Вы не ввели ничего");
   if (signInLogin == signUpLogin && signInPassword == signUpPassword)
-    return alert("Здравствуйте");
+    return (
+      (window.location.href = "profile.html") &&
+      alert("Добро пожаловать " + signInLogin)
+    );
   else signInLogin !== signUpLogin || signInPassword !== signUpPassword;
   return alert("Неверный логин или пароль");
 }
