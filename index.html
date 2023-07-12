@@ -20,26 +20,27 @@
     </div>
     <div class="wrapper-reg">
       <div class="visible" id="visible">
-        <form class="regform" id="myForm">
+        <form class="regform" id="form">
           <h2>Регистрация</h2>
           <h3>Логин</h3>
-          <input type="text" id="login-reg" />
+          <input type="text" id="log" required />
           <h3>Пароль</h3>
-          <input type="password" id="password-reg" />
+          <input type="password" id="pass" required />
           <h3>E-mail</h3>
-          <input type="mail" id="mail-reg" />
+          <input type="mail" id="ma" required />
           <button
             type="submit"
             class="singup-btn"
             value="Зарегистрировать"
-            onclick=""
+            id="submitButton"
           >
             Зарегистрировать
           </button>
         </form>
       </div>
     </div>
-    <script src="./post.js"></script>
-    <script src="./index.js"></script>
+
+    <script src="./JS/index.js"></script>
+    <script src="./JS/register.js"></script>
   </body>
 </html>
