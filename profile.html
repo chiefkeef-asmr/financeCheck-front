@@ -52,7 +52,41 @@
           </div>
         </div>
       </div>
+
+      <div class="categories">
+        <div class="category-select">
+          <h4>Расходы</h4>
+
+          <select name="option" id="category-selector"></select>
+          <h4>Добавить опцию</h4>
+          <input
+            type="text"
+            class="category-adding"
+            id="post-category-expense"
+          />
+          <button class="add-category" type="submit" id="post-expense">
+            +
+          </button>
+        </div>
+      </div>
+
+      <div class="categories">
+        <div class="income">
+          <h4>Доход</h4>
+
+          <select name="option" id="category-selector-income"></select>
+          <h4>Добавить опцию</h4>
+          <input
+            type="text"
+            class="category-adding"
+            id="post-category-income"
+          />
+          <button class="add-category" type="submit" id="post-income">+</button>
+        </div>
+      </div>
     </div>
     <script src="./JS/profile.js"></script>
+    <script src="./JS/asyncRequest.js"></script>
+    <script src="./JS/asyncPost.js"></script>
   </body>
 </html>

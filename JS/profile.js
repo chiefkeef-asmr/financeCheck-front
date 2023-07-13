@@ -1,4 +1,4 @@
-const profile = "http://devapp.levus.suppgcl.ru/users/6";
+const profile = "http://devapp.levus.suppgcl.ru/users/1";
 const login = document.getElementById("profile-login");
 const mail = document.getElementById("profile-mail");
 const dateReg = document.getElementById("profile-date");
