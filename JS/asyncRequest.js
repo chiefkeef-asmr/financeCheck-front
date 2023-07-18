@@ -1,7 +1,7 @@
 async function fetchIncomeAndExpense() {
   const [expenseResponse, incomeResponse] = await Promise.all([
-    fetch("http://devapp.levus.suppgcl.ru/category/expense/13"),
-    fetch("http://devapp.levus.suppgcl.ru/category/income/1"),
+    fetch("http://devapp.levus.suppgcl.ru/category/expense/#"),
+    fetch("http://devapp.levus.suppgcl.ru/category/income/#"),
   ]);
   const expense = await expenseResponse.json();
   const income = await incomeResponse.json();

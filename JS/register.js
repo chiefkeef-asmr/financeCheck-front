@@ -19,26 +19,12 @@ let button = form.submit.addEventListener("click", (e) => {
       hashed_password: form.password.value,
       username: form.username.value,
     }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      // code here //
-      if (data.error) {
-        alert("Error Password or Username"); /*displays error message*/
-      }
-      if (response.status === 200) {
-        alert("Вы успешно зарегистрировались");
-        /*opens the target page while Id & password matches*/
-      }
-      if (response.status === 422) {
-        alert("Переданы не верные данные");
-      }
-      if (response.status === 400) {
-        alert("Пользователь с таким логином или почтой уже существует");
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  }).then((response) => {
+    if (response.status === 200) {
+      alert("Пользователь успешно создан");
+    }
+    if (response === 400) {
+      alert("Ошибка: " + response.statusText);
+    }
+  });
 });

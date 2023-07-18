@@ -20,13 +20,12 @@ function postExpense() {
         created_by: 6,
       }),
     }).then((response) => {
-      responseExpense = response.json();
+      if (response.status === 200) {
+        alert("Категория добавлена!");
+      } else {
+        alert("Ошибка: " + response.statusText);
+      }
     });
-    if (responseExpense.status === 200) {
-      alert("Категория добавлена!");
-    } else {
-      alert("Ошибка: " + response.statusText);
-    }
   }
 }
 
@@ -42,13 +41,12 @@ function postIncom() {
         created_by: 6,
       }),
     }).then((response) => {
-      responseIncome = response.json();
+      if (response.status === 200) {
+        alert("Категория добавлена!");
+      } else {
+        alert("Ошибка: " + response.statusText);
+      }
     });
-    if (responseIncome.status === 200) {
-      alert("Категория добавлена!");
-    } else {
-      alert("Ошибка" + response.statusText);
-    }
   }
 }
 

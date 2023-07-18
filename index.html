@@ -14,7 +14,7 @@
         <input type="text" id="login" placeholder="Логин" />
         <h3>Пароль</h3>
         <input type="password" id="password" placeholder="Пароль" />
-        <button onclick="" class="sing-btn">Войти</button>
+        <button onclick="loginForm()" class="sing-btn">Войти</button>
         <button onclick="showBlock()" class="reg-btn">Зарегистрировать</button>
       </div>
     </div>
@@ -36,11 +36,13 @@
           >
             Зарегистрировать
           </button>
+          <button class="closeModal" onclick="hideBlock()">Закрыть</button>
         </form>
       </div>
     </div>
 
     <script src="./JS/index.js"></script>
     <script src="./JS/register.js"></script>
+    <script src="./js/login.js"></script>
   </body>
 </html>

@@ -51,11 +51,16 @@ button:hover {
 }
 .wrapper-reg {
   display: flex;
+
   justify-content: center;
   align-items: center;
 }
 .visible {
   display: none;
+  position: fixed;
+  max-width: 300px;
+  margin: auto;
+  inset: 0;
 }
 
 .wrapper-reg-button {
