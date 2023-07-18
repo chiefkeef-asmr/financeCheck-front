@@ -14,7 +14,10 @@ function loginForm() {
   }).then((response) => {
     if (response.status === 200) {
       alert(`Здравсвуйте ${userLogin}`);
-      document.cookie = response;
+      function cookie(elem) {
+        document.cookie = elem;
+      }
+      cookie(response);
       // window.location.href = "./profile.html";
     }
 
