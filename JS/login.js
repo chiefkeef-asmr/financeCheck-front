@@ -13,12 +13,12 @@ function loginForm() {
     },
   }).then((response) => {
     if (response.status === 200) {
-      alert(`Здравсвуйте ${userLogin}`);
-      function cookie(elem) {
-        document.cookie = elem;
-      }
-      cookie(response);
-      // window.location.href = "./profile.html";
+      response.json().then((data) => {
+        const accessToken = data.access_token;
+        document.cookie = `access_token=${encodeURIComponent(accessToken)}`;
+        alert(`Здравсвуйте ${userLogin}`);
+        // window.location.href = "./profile.html";
+      });
     }
 
     if (response.status === 400) {
@@ -28,5 +28,4 @@ function loginForm() {
       alert("Неприемлемый тип данных");
     }
   });
-  return response;
 }
