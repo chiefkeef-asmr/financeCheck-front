@@ -4,27 +4,27 @@ on:
       - main
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # Выберите нужный вам образ
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2  # Действие для клонирования репозитория
+        uses: actions/checkout@v2
 
       - name: Copy code to server
-        uses: appleboy/scp-action@master  # Действие для передачи файлов по SCP
+        uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.SERVER_PORT }}
-          source: .  # Передача текущей директории (весь репозиторий)
-          target: /home/ubuntu/fe_ficheck  # Укажите путь на сервере, куда нужно передать файлы
+          source: .
+          target: /home/ubuntu/fe_ficheck
 
       - name: Restart Nginx
-        uses: appleboy/ssh-action@master  # Действие для выполнения команды SSH
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.SERVER_PORT }}
           script: |
-            sudo systemctl reload nginx  # Команда перезапуска Nginx
+            sudo systemctl reload nginx
