@@ -20,7 +20,7 @@ fetch(profile, {
   method: "GET",
   headers: {
     "Content-Type": "application/json",
-    Authorization: "Bearer " + cookieValue,
+    Authorization: "Bearer " + getCookieValue("access_token"),
   },
 
   credentials: "include",
