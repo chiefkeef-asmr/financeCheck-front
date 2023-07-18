@@ -1,0 +1,30 @@
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Выберите нужный вам образ
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Действие для клонирования репозитория
+
+      - name: Copy code to server
+        uses: appleboy/scp-action@master  # Действие для передачи файлов по SCP
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          port: ${{ secrets.SERVER_PORT }}
+          source: .  # Передача текущей директории (весь репозиторий)
+          target: /home/ubuntu/fe_ficheck  # Укажите путь на сервере, куда нужно передать файлы
+
+      - name: Restart Nginx
+        uses: appleboy/ssh-action@master  # Действие для выполнения команды SSH
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          port: ${{ secrets.SERVER_PORT }}
+          script: |
+            sudo systemctl reload nginx  # Команда перезапуска Nginx
