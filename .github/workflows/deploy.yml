@@ -17,7 +17,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.SERVER_PORT }}
           source: .
-          target: /home/ubuntu/fe_ficheck
+          target: /var/www/fe_ficheck/
 
       - name: Restart Nginx
         uses: appleboy/ssh-action@master
