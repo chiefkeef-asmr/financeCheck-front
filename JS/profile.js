@@ -3,11 +3,24 @@ const login = document.getElementById("profile-login");
 const mail = document.getElementById("profile-mail");
 const dateReg = document.getElementById("profile-date");
 
+function getCookieValue(name) {
+  const cookies = document.cookie.split(";");
+  for (const cookie of cookies) {
+    const [cookieName, cookieValue] = cookie.split("=");
+    if (cookieName === name) {
+      return cookieValue;
+    }
+  }
+  return null;
+}
+
+const cookieValue = getCookieValue("access_token");
+
 fetch(profile, {
   method: "GET",
   headers: {
     "Content-Type": "application/json",
-    Authorization: "Bearer " + document.cookie,
+    Authorization: "Bearer " + cookieValue,
   },
 
   credentials: "include",

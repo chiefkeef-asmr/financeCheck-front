@@ -17,7 +17,7 @@ function loginForm() {
         const accessToken = data.access_token;
         document.cookie = `access_token=${encodeURIComponent(accessToken)}`;
         alert(`Здравсвуйте ${userLogin}`);
-        // window.location.href = "./profile.html";
+        window.location.href = "./profile.html";
       });
     }
 
