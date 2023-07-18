@@ -24,7 +24,8 @@ jobs:
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
-          key: ${{ secrets.SERVER_PRIVATE_KEY }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          port: ${{ secrets.SERVER_PORT }}
           script: |
             sudo cp -r fe_ficheck /var/www/fe_ficheck
 
@@ -37,3 +38,4 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           script: |
             sudo systemctl reload nginx
+# comment
