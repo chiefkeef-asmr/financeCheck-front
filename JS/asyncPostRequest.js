@@ -1,26 +1,31 @@
-const postIncomeInput = {
-  name: document.getElementById("post-category-income"),
-  id: 6,
-};
+const postIncomeInput = document.getElementById("post-category-income");
 
-const postExpenseInput = {
-  name: document.getElementById("post-category-expense"),
-  id: 6,
-};
+const postExpenseInput = document.getElementById("post-category-expense");
+
+function getCookieValueReq(name) {
+  const cookies = document.cookie.split(";");
+  for (const cookie of cookies) {
+    const [cookieName, cookieValue] = cookie.split("=");
+    if (cookieName === name) {
+      return cookieValue;
+    }
+  }
+  return null;
+}
 
 function postExpense() {
-  if (postExpenseInput.name.value !== "") {
-    fetch("http://devapp.levus.suppgcl.ru/category/expense/", {
+  if (postExpenseInput.value !== "") {
+    fetch("http://devapp.levus.suppgcl.ru/category/expense", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer " + getCookieValueReq("access_token"),
       },
       body: JSON.stringify({
-        name: postExpenseInput.name.value,
-        created_by: 6,
+        name: postExpenseInput.value,
       }),
     }).then((response) => {
-      if (response.status === 200) {
+      if (response.status === 200 || response.status === 201) {
         alert("Категория добавлена!");
       } else {
         alert("Ошибка: " + response.statusText);
@@ -30,18 +35,18 @@ function postExpense() {
 }
 
 function postIncom() {
-  if (postIncomeInput.name.value !== "") {
-    fetch("http://devapp.levus.suppgcl.ru/category/income/", {
+  if (postIncomeInput.value !== "") {
+    fetch("http://devapp.levus.suppgcl.ru/category/income", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer " + getCookieValueReq("access_token"),
       },
       body: JSON.stringify({
-        name: postIncomeInput.name.value,
-        created_by: 6,
+        name: postIncomeInput.value,
       }),
     }).then((response) => {
-      if (response.status === 200) {
+      if (response.status === 200 || response.status === 201) {
         alert("Категория добавлена!");
       } else {
         alert("Ошибка: " + response.statusText);
