@@ -174,7 +174,7 @@ a:hover {
   margin-left: 10px;
 }
 select {
-  width: 215px;
+  width: 190px;
   background-color: rgb(47, 47, 47);
   box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.131);
   border-radius: 8px;
@@ -205,4 +205,8 @@ option:focus-within {
 .income {
   margin-top: 15px;
   margin-left: 10px;
+}
+.del-category {
+  padding-left: 10px;
+  text-align: center;
 }

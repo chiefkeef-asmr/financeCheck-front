@@ -13,6 +13,19 @@ function getCookieValueReq(name) {
   return null;
 }
 
+function voidCheck() {
+  if (postExpenseInput.value == "" && postIncomeInput.value == "") {
+    alert("Нельзя отправить пустую категорию!");
+  } else {
+    postExpense();
+    postIncom();
+  }
+}
+
+function updateElement() {
+  window.location.reload();
+}
+
 function postExpense() {
   if (postExpenseInput.value !== "") {
     fetch("http://devapp.levus.suppgcl.ru/category/expense", {
@@ -27,6 +40,7 @@ function postExpense() {
     }).then((response) => {
       if (response.status === 200 || response.status === 201) {
         alert("Категория добавлена!");
+        updateElement();
       } else {
         alert("Ошибка: " + response.statusText);
       }
@@ -48,6 +62,7 @@ function postIncom() {
     }).then((response) => {
       if (response.status === 200 || response.status === 201) {
         alert("Категория добавлена!");
+        updateElement();
       } else {
         alert("Ошибка: " + response.statusText);
       }
@@ -58,6 +73,5 @@ function postIncom() {
 const expenseButton = document.getElementById("post-expense");
 const incomeButton = document.getElementById("post-income");
 
-expenseButton.addEventListener("click", postExpense);
-
-incomeButton.addEventListener("click", postIncom);
+expenseButton.addEventListener("click", voidCheck, updateElement);
+incomeButton.addEventListener("click", voidCheck, updateElement);

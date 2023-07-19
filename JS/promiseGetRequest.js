@@ -51,7 +51,7 @@ Promise.all([getCategoryExpenses, getCategoryIncomes])
     incomeResp.forEach((item) => {
       const incomeOption = document.createElement("option");
 
-      incomeOption.value = item.name;
+      incomeOption.value = item.id;
 
       incomeOption.text = item.name;
 
@@ -63,7 +63,7 @@ Promise.all([getCategoryExpenses, getCategoryIncomes])
     expenseResp.forEach((item) => {
       const expenseOption = document.createElement("option");
 
-      expenseOption.value = item.name;
+      expenseOption.value = item.id;
 
       expenseOption.text = item.name;
 
@@ -74,3 +74,43 @@ Promise.all([getCategoryExpenses, getCategoryIncomes])
     // Обработка ошибок, если что-то пошло не так при выполнении запросов.
     console.error("Ошибка при выполнении запросов:", error);
   });
+
+const deleteIncome = document.getElementById("del-income");
+
+const deleteExpense = document.getElementById("del-expense");
+
+deleteIncome.addEventListener("click", () => {
+  const selectedOptionIdIncome = incomeSelect.value;
+  fetch(
+    `http://devapp.levus.suppgcl.ru/category/income/delete/${selectedOptionIdIncome}`,
+    {
+      method: "DELETE",
+      headers: {
+        Authorization: "Bearer " + getCookieValueCategory("access_token"),
+      },
+    }
+  ).then((resp) => {
+    if (resp.status === 204) {
+      alert("Категория удалена");
+      window.location.reload();
+    }
+  });
+});
+
+deleteExpense.addEventListener("click", () => {
+  const selectedOptionIdExpense = expenseSelect.value;
+  fetch(
+    `http://devapp.levus.suppgcl.ru/category/expense/delete/${selectedOptionIdExpense}`,
+    {
+      method: "DELETE",
+      headers: {
+        Authorization: "Bearer " + getCookieValueCategory("access_token"),
+      },
+    }
+  ).then((resp) => {
+    if (resp.status === 204) {
+      alert("Категория удалена");
+      window.location.reload();
+    }
+  });
+});
