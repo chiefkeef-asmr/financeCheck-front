@@ -32,7 +32,15 @@ fetch(profile, {
       dateReg.value = json.created_at;
     });
   } else {
-    alert("Ошибка: " + response.status);
+    alert("Досвидания Код: " + response.status);
     window.location.href = "index.html";
   }
 });
+
+function delete_cookie(name) {
+  document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+}
+
+const logoutButton = document.getElementById("UnAutho");
+
+logoutButton.addEventListener("click", delete_cookie("access_token"));
