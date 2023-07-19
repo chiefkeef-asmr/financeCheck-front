@@ -1,7 +1,28 @@
+function getCookieValueCategory(name) {
+  const cookies = document.cookie.split(";");
+  for (const cookie of cookies) {
+    const [cookieName, cookieValue] = cookie.split("=");
+    if (cookieName === name) {
+      return cookieValue;
+    }
+  }
+  return null;
+}
+
 async function fetchIncomeAndExpense() {
   const [expenseResponse, incomeResponse] = await Promise.all([
-    fetch("http://devapp.levus.suppgcl.ru/category/expense"),
-    fetch("http://devapp.levus.suppgcl.ru/category/income"),
+    fetch("http://devapp.levus.suppgcl.ru/category/expense/all", {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + getCookieValueCategory("access_token"),
+      },
+    }),
+    fetch("http://devapp.levus.suppgcl.ru/category/income/all", {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + getCookieValueCategory("access_token"),
+      },
+    }),
   ]);
   const expense = await expenseResponse.json();
   const income = await incomeResponse.json();
