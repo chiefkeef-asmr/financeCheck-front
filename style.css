@@ -262,3 +262,36 @@ option:focus-within {
 .del-category::before {
   content: "\2716";
 }
+
+@supports (-webkit-touch-callout: none) {
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .leftCol {
+    width: 97%;
+    margin-left: 8px;
+    margin-bottom: 8px;
+  }
+  .accImage {
+    margin-left: 40%;
+  }
+  .acc-menu {
+    margin-left: 35%;
+  }
+  .acc-logout {
+    margin-left: 32%;
+  }
+  .wrapper-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .cat-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  .categories-inc {
+    margin-top: 8px;
+  }
+}
