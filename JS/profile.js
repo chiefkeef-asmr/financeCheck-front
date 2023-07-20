@@ -36,7 +36,3 @@ fetch(profile, {
     window.location.href = "index.html";
   }
 });
-
-const logoutButton = document.getElementById("UnAutho");
-
-logoutButton.addEventListener("click", (window.location.href = "./index.html"));
