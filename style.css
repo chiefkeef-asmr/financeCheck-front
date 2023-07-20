@@ -209,7 +209,7 @@ option:focus-within {
   margin-left: 10px;
 }
 .del-category {
-  padding-left: 10px;
+  padding-left: 6px;
   text-align: center;
 }
 .categories {
@@ -255,4 +255,10 @@ option:focus-within {
   .categories-inc {
     margin-top: 8px;
   }
+}
+.add-category::before {
+  content: "\2714";
+}
+.del-category::before {
+  content: "\2716";
 }
