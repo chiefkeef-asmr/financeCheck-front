@@ -37,10 +37,6 @@ fetch(profile, {
   }
 });
 
-function delete_cookie(name) {
-  document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-}
-
 const logoutButton = document.getElementById("UnAutho");
 
-logoutButton.addEventListener("click", delete_cookie("access_token"));
+logoutButton.addEventListener("click", (window.location.href = "./index.html"));

@@ -26,6 +26,7 @@ input {
   padding-top: 10px;
   box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.131);
 }
+
 button {
   border: none;
   background-color: rgba(66, 94, 171, 0.83);
@@ -162,10 +163,11 @@ a:hover {
   justify-content: center;
   align-items: center;
 }
-.categories {
+.categories,
+.categories-inc {
   background-color: rgb(39, 39, 39);
   border-radius: 8px;
-  height: 350px;
+  height: 215px;
   width: 237px;
   margin-left: 8px;
 }
@@ -209,4 +211,10 @@ option:focus-within {
 .del-category {
   padding-left: 10px;
   text-align: center;
+}
+.categories {
+  margin-top: 135px;
+}
+.categories-inc {
+  margin-bottom: 130px;
 }
