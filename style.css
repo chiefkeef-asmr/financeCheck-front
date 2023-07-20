@@ -295,3 +295,51 @@ option:focus-within {
     margin-top: 8px;
   }
 }
+
+.second-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.expenseTable {
+  background-color: rgb(39, 39, 39);
+  box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.131);
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-left: 107px;
+  width: 727px;
+}
+.container {
+  margin-left: 10px;
+  margin-bottom: 15px;
+  margin-right: 10px;
+}
+textarea {
+  margin-top: 5px;
+  width: 703px;
+  height: 100px;
+  background-color: rgb(47, 47, 47);
+  border: none;
+  color: aliceblue;
+  resize: none;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+.calendar {
+  padding: 7px;
+}
+.sendExpense::before {
+  content: "\2192";
+  padding: 24px;
+}
+.incomeTable {
+  background-color: rgb(39, 39, 39);
+  box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.131);
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-left: 107px;
+  width: 727px;
+}

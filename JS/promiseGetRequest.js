@@ -2,6 +2,10 @@ const incomeSelect = document.getElementById("category-selector-income");
 
 const expenseSelect = document.getElementById("category-selector");
 
+const expenseTable = document.getElementById("expenseTableSelect");
+
+const incomeTable = document.getElementById("incomeTableSelect");
+
 function getCookieValueCategory(name) {
   const cookies = document.cookie.split(";");
   for (const cookie of cookies) {
@@ -68,6 +72,25 @@ Promise.all([getCategoryExpenses, getCategoryIncomes])
       expenseOption.text = item.name;
 
       expenseSelect.appendChild(expenseOption);
+    });
+    expenseResp.forEach((item) => {
+      const expenseOptionTable = document.createElement("option");
+
+      expenseOptionTable.value = item.id;
+
+      expenseOptionTable.text = item.name;
+
+      expenseTable.appendChild(expenseOptionTable);
+    });
+
+    incomeResp.forEach((item) => {
+      const incomeOptionTable = document.createElement("option");
+
+      incomeOptionTable.value = item.id;
+
+      incomeOptionTable.text = item.name;
+
+      incomeTable.appendChild(incomeOptionTable);
     });
   })
   .catch((error) => {
