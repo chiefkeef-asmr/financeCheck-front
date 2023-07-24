@@ -29,7 +29,8 @@ fetch(profile, {
     response.json().then(function (json) {
       login.value = json.username;
       mail.value = json.email;
-      dateReg.value = json.created_at;
+      const profileDate = new Date(json.created_at * 1000);
+      dateReg.value = profileDate.toLocaleString();
     });
   } else {
     alert("Досвидания Код: " + response.status);

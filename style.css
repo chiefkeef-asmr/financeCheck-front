@@ -335,6 +335,10 @@ textarea {
   content: "\2192";
   padding: 24px;
 }
+.sendIncome::before {
+  content: "\2192";
+  padding: 24px;
+}
 .incomeTable {
   background-color: rgb(39, 39, 39);
   box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.131);

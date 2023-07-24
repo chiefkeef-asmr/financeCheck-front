@@ -103,8 +103,8 @@
         <div class="container">
           <h4>Расходы</h4>
           <select name="option" id="expenseTableSelect"></select>
-          <input type="date" class="calendar" />
-          <input type="number" />
+          <input type="date" class="calendar" id="expenseDate" />
+          <input type="number" id="expenseAmount" />
           <button class="sendExpense"></button>
           <div class="descarea">
             <textarea placeholder="Введите описание"></textarea>
@@ -116,9 +116,9 @@
         <div class="container">
           <h4>Доходы</h4>
           <select name="option" id="incomeTableSelect"></select>
-          <input type="date" class="calendar" />
-          <input type="number" />
-          <button class="sendExpense"></button>
+          <input type="date" class="calendar" id="incomeDate" />
+          <input type="number" id="incomeAmount" />
+          <button class="sendIncome"></button>
           <div class="descarea">
             <textarea placeholder="Введите описание"></textarea>
           </div>
@@ -128,5 +128,6 @@
     <script src="./JS/profile.js" script type="module"></script>
     <script src="./JS/promiseGetRequest.js"></script>
     <script src="./JS/asyncPostRequest.js"></script>
+    <script src="./JS/postTables.js"></script>
   </body>
 </html>
