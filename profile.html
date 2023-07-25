@@ -105,9 +105,12 @@
           <select name="option" id="expenseTableSelect"></select>
           <input type="date" class="calendar" id="expenseDate" />
           <input type="number" id="expenseAmount" />
-          <button class="sendExpense"></button>
+          <button class="sendExpense" onclick="fetchExpense()"></button>
           <div class="descarea">
-            <textarea placeholder="Введите описание"></textarea>
+            <textarea
+              placeholder="Введите описание"
+              id="expenseDesc"
+            ></textarea>
           </div>
         </div>
       </div>
@@ -118,9 +121,9 @@
           <select name="option" id="incomeTableSelect"></select>
           <input type="date" class="calendar" id="incomeDate" />
           <input type="number" id="incomeAmount" />
-          <button class="sendIncome"></button>
+          <button class="sendIncome" onclick="fetchIncome()"></button>
           <div class="descarea">
-            <textarea placeholder="Введите описание"></textarea>
+            <textarea placeholder="Введите описание" id="incomeDesc"></textarea>
           </div>
         </div>
       </div>

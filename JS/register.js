@@ -20,11 +20,10 @@ let button = form.submit.addEventListener("click", (e) => {
       username: form.username.value,
     }),
   }).then((response) => {
-    if (response.status === 200) {
+    if (response.ok) {
       alert("Пользователь успешно создан");
-    }
-    if (response === 400) {
-      alert("Ошибка: " + response.statusText);
+    } else {
+      alert(response.statusText);
     }
   });
 });
