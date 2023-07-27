@@ -107,7 +107,7 @@ deleteIncome.addEventListener("click", () => {
   fetch(
     `http://devapp.levus.suppgcl.ru/category/income/delete/${selectedOptionIdIncome}`,
     {
-      method: "DELETE",
+      method: "PUT",
       headers: {
         Authorization: "Bearer " + getCookieValueCategory("access_token"),
       },
@@ -125,7 +125,7 @@ deleteExpense.addEventListener("click", () => {
   fetch(
     `http://devapp.levus.suppgcl.ru/category/expense/delete/${selectedOptionIdExpense}`,
     {
-      method: "DELETE",
+      method: "PUT",
       headers: {
         Authorization: "Bearer " + getCookieValueCategory("access_token"),
       },
