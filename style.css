@@ -347,3 +347,34 @@ textarea {
   margin-left: 107px;
   width: 727px;
 }
+.leftCol,
+.rightCol,
+.categories,
+.categories-inc {
+  box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.131);
+}
+@media screen and (max-width: 856px) {
+  .expenseTable,
+  .incomeTable {
+    width: 237px;
+    margin-right: 100px;
+  }
+  textarea {
+    width: 212px;
+    margin-top: 10px;
+  }
+  .sendIncome,
+  .sendExpense {
+    margin-top: 10px;
+  }
+  #incomeTableSelect,
+  #expenseTableSelect {
+    width: 215px;
+    margin-bottom: 10px;
+  }
+  #incomeDate,
+  #expenseDate {
+    margin-bottom: 10px;
+    width: 201px;
+  }
+}
