@@ -225,23 +225,44 @@ option:focus-within {
 }
 
 @media screen and (max-width: 856px) {
+  * {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  #profile-login,
+  #profile-mail,
+  #profile-date {
+    width: 350px;
+  }
+  #category-selector,
+  #category-selector-income {
+    width: 340px;
+  }
+  #post-category-expense,
+  #post-category-income {
+    width: 325px;
+  }
+
+  .save-data {
+    margin-left: 110px;
+  }
   .grid-container {
     display: flex;
     flex-direction: column;
   }
   .leftCol {
-    width: 97%;
     margin-left: 8px;
     margin-bottom: 8px;
+    width: 390px;
   }
   .accImage {
-    margin-left: 40%;
+    margin-left: 45%;
   }
   .acc-menu {
-    margin-left: 35%;
+    margin-left: 42%;
   }
   .acc-logout {
-    margin-left: 32%;
+    margin-left: 40%;
   }
   .wrapper-container {
     display: flex;
@@ -251,9 +272,17 @@ option:focus-within {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+    width: 400px;
   }
   .categories-inc {
     margin-top: 8px;
+    width: auto;
+  }
+  .categories {
+    width: auto;
+  }
+  .rightCol {
+    width: auto;
   }
 }
 .add-category::before {
@@ -261,39 +290,6 @@ option:focus-within {
 }
 .del-category::before {
   content: "\2716";
-}
-
-@supports (-webkit-touch-callout: none) {
-  .grid-container {
-    display: flex;
-    flex-direction: column;
-  }
-  .leftCol {
-    width: 97%;
-    margin-left: 8px;
-    margin-bottom: 8px;
-  }
-  .accImage {
-    margin-left: 40%;
-  }
-  .acc-menu {
-    margin-left: 35%;
-  }
-  .acc-logout {
-    margin-left: 32%;
-  }
-  .wrapper-container {
-    display: flex;
-    flex-direction: column;
-  }
-  .cat-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-  }
-  .categories-inc {
-    margin-top: 8px;
-  }
 }
 
 .second-wrapper {
@@ -356,11 +352,11 @@ textarea {
 @media screen and (max-width: 856px) {
   .expenseTable,
   .incomeTable {
-    width: 237px;
+    width: 395px;
     margin-right: 100px;
   }
   textarea {
-    width: 212px;
+    width: 370px;
     margin-top: 10px;
   }
   .sendIncome,
@@ -369,12 +365,16 @@ textarea {
   }
   #incomeTableSelect,
   #expenseTableSelect {
-    width: 215px;
+    width: 375px;
     margin-bottom: 10px;
   }
   #incomeDate,
   #expenseDate {
     margin-bottom: 10px;
-    width: 201px;
+    width: 360px;
+  }
+  #expenseAmount,
+  #incomeAmount {
+    width: 281px;
   }
 }
