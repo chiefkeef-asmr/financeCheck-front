@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tables</title>
+  </head>
+  <body>
+    <div class="table-wrapper">
+      <div class="block-expense">
+        <div class="table-container-expense">
+          <h4>Расходы по дням</h4>
+          <input type="date" id="startDateExpense" />
+          <input type="date" id="endDateExpense" />
+          <button id="expensePeriodBtn">Применить</button>
+        </div>
+      </div>
+
+      <div class="block-expense-table">
+        <div class="expense-first-sector">
+          <h4 class="expense-category-name">Название категории</h4>
+          <hr />
+          <div class="expenseName" id="expenseName"></div>
+          <!-- <h4 class="expense-cat-name">Название</h4> -->
+        </div>
+
+        <div class="expense-second-sector">
+          <h4 class="expense-sum-name">Сумма</h4>
+          <hr />
+          <!-- <h4 class="expense-cat-sum">Значение</h4> -->
+          <div class="expenseSum" id="expenseSum"></div>
+        </div>
+      </div>
+
+      <div class="block-income">
+        <div class="table-container-income">
+          <h4>Доходы по дням</h4>
+          <input type="date" id="startDateIncome" />
+          <input type="date" id="endDateIncome" />
+          <button id="incomePeriodBtn">Применить</button>
+        </div>
+      </div>
+
+      <div class="block-income-table">
+        <div class="income-first-sector">
+          <h4 class="income-category-name">Название категории</h4>
+          <hr />
+          <div class="incomeName" id="incomeName"></div>
+          <!-- <h4 class="income-cat-name">Название</h4> -->
+        </div>
+
+        <div class="income-second-sector">
+          <h4 class="income-category-name">Сумма</h4>
+          <hr />
+          <div class="incomeSum" id="incomeSum"></div>
+          <!-- <h4 class="income-cat-sum">Значение</h4> -->
+        </div>
+      </div>
+    </div>
+
+    <script src="/JS/tableRequest.js"></script>
+  </body>
+</html>

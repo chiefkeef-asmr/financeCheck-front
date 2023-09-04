@@ -378,3 +378,50 @@ textarea {
     width: 281px;
   }
 }
+
+.table-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.block-expense {
+  background-color: rgb(39, 39, 39);
+  padding: 1%;
+  border-radius: 8px;
+}
+.block-income {
+  background-color: rgb(39, 39, 39);
+  padding: 1%;
+  border-radius: 8px;
+}
+
+.block-expense-table,
+.block-income-table {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.expense-first-sector,
+.income-first-sector {
+  background-color: rgb(39, 39, 39);
+  padding: 1%;
+  border-radius: 8px;
+  margin-top: 15px;
+  width: 415px;
+  margin-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.expense-second-sector,
+.income-second-sector {
+  background-color: rgb(39, 39, 39);
+  padding: 1%;
+  border-radius: 8px;
+  margin-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
