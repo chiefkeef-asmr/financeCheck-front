@@ -4,6 +4,9 @@ function getCookieValue(name) {
     const [cookieName, cookieValue] = cookie.split("=");
     if (cookieName === name) {
       return cookieValue;
+    } else {
+      alert("Досвидания Код: " + response.status);
+      window.location.href = "index.html";
     }
   }
   return null;
@@ -46,6 +49,10 @@ let incomeCategory;
 let expenseNameData;
 
 let incomeNameData;
+
+let clickCountExp = 0;
+
+let clickCountInc = 0;
 
 //Функция обновления дока
 
@@ -92,6 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => {
         const expenseCategoryName = document.getElementById("expenseName");
         const expenseCategorySum = document.getElementById("expenseSum");
+        expenseCategoryName.innerHTML = "";
+        expenseCategorySum.innerHTML = "";
         if (
           expenseCategorySum &&
           expenseCategoryName &&
@@ -107,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
             expCatSum.textContent = expenseName.total_amount;
             expenseCategorySum.appendChild(expCatSum);
           });
+          alert(`Вы загрузили период с ${expenseDateValueStart.value}`);
         } else {
           alert("Нет данных о расходах");
         }
@@ -139,6 +149,8 @@ document.addEventListener("DOMContentLoaded", function () {
         .then((response) => {
           const incomeCategoryName = document.getElementById("incomeName");
           const incomeCategorySum = document.getElementById("incomeSum");
+          incomeCategoryName.innerHTML = "";
+          incomeCategorySum.innerHTML = "";
           if (incomeCategoryName && response && response.length > 0) {
             console.log(response);
             response.forEach((incomeName) => {
@@ -149,6 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
               incCatSum.textContent = incomeName.total_amount;
               incomeCategorySum.appendChild(incCatSum);
             });
+            alert(`Вы загрузили период с ${incomeDateValueStart.value}`);
           } else {
             alert("Нет данных о расходах");
           }
@@ -161,6 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //слушаем кнопку при клике делаем функцию феча
   expenseConfirm.addEventListener("click", fetchExpense);
+
   incomeConfirm.addEventListener("click", fetchIncome);
 
   //Все происходит если документ прогружен
